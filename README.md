@@ -15,7 +15,7 @@ National IDs and Passports System It is a system for the citizens, which uses th
 - Usability: the system should be easy to use for our citizens even for non-technical users.
 - Portability: the system should be launched within different environments, the system should run in the same way in different windows.
  
- ##Accessibilty:
+ ## Accessibilty:
 The system is accessible to the administrant and employee, the citizens can only require changes to their applications 
 •	Administrant
 •	Employee   
