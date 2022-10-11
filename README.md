@@ -8,6 +8,13 @@ National IDs and Passports System It is a system for the citizens, which uses th
   2. serving the citizens faster
   3. facilitating government work
   4. Make electronic information about citizens
+
+## Content Structure 
+
+The content of the project will be the same in the below Diagram:
+
+
+![This is an image](./images/diagram.jpg)
   
   ##  Functional-Requirements
 
