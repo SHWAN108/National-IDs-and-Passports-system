@@ -68,6 +68,36 @@ The Tool used is :
 - Visual Studio Code
 - GitHub
 
+## Our Team
+
+- Shwan Shero
+Responsible for Building and Designing the Project.
+- Payam Rasho
+Responsible for Building and Designing the Project.
+- Chnar Abdullah
+Responsible for Building and Designing the Project.
+- Ramel Nawzad
+Responsible for Building and Designing the Project.
+
+## Contact us 
+ Shwan Shero
+   - GitHub: [ShwanShero](https://github.com/SHWAN108) 
+   - Email: <a href="mailto:shwanshero888@gmail.com">shwanshero888@gmail.com</a>
+
+Payam Rasho
+   - GitHub: [Payam Rasho](https://github.com/PayamRasho) 
+   - Email: <a href="mailto:payamrfattah01@gmail.com">payamrfattah01@gmail.com</a>
+
+
+Chnar Abdullah
+
+   - GitHub: [ChnarAbdullah](https://github.com/ChnarAbdullah) 
+   - Email: <a href="mailto:chnara249@gmail.com">chnara249@gmail.com</a>
+
+Ramel Nawzad 
+   - GitHub: [RamelNawzad](https://github.com/Ramel1212) 
+   - Email: <a href="mailto:Ramelsyawish@gmail.com">Ramelsyawish@gmail.com</a>
+
 ## About
 This project is our final project for Advanced Computer Programming (ACP) class supervised by Dr. Polla Fattah.
 
