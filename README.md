@@ -60,6 +60,13 @@ The system is accessible to the administrant and employee, the citizens can only
  - Administrant 
  - Employee
 
+## System Requirements
+### For the Hardware
+ - PC or Desktop
+ - Laptops
+ ### For the software
+  - Windows  8,10 and 11
+
  ## The Tool and Program that used in the project:
 The Programing language used is :
 - java
