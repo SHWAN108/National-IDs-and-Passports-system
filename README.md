@@ -42,7 +42,7 @@ We have two types of users (Citizens and Goverment), each of them has a differen
      - Renew the passport
      - Change name in National ID
  
- ## Non-Functional requirements:
+ ## Non-Functional Requirements:
 - Performance: the software system’s performance should return results fast and should be scalable for the citizens, so it will adjustable to many conditions.
 - Security: the system should be secured very well against attack.
 - Usability: the system should be easy to use for our citizens even for non-technical users.
@@ -60,3 +60,8 @@ The Programing language used is :
 The Tool used is :
 - Visual Studio Code
 - GitHub
+
+## About
+This project is our final project for Advanced Computer Programming (ACP) class supervised by Dr. Polla Fattah.
+
+For this project we will use Waterfall model as the software development life cycle (SDLC) because the requirements are completed early in the project, enabling the team to define the entire project scope, create a complete schedule, and control the overall application.
