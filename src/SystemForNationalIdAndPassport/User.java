@@ -90,6 +90,6 @@ public class User {
         return "User [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", id=" + id + ", password="
                 + password + ", email=" + email + ", dob=" + dob + ", gender=" + gender + ", position=" + position
                 + "]";
-                
+
     }
-    }
+}
