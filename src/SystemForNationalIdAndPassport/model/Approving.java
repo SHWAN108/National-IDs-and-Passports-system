@@ -1,6 +1,6 @@
 package SystemForNationalIdAndPassport.model;
 
-public enum Agree {
+public enum Approving {
     Accept,
     Reject
 }
