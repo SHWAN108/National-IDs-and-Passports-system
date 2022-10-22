@@ -1,4 +1,4 @@
-package SystemForNationalIdAndPassport;
+package SystemForNationalIdAndPassport.model;
 
 public enum Position {
     Citizens,
