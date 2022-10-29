@@ -1,34 +1,28 @@
 package SystemForNationalIdAndPassport.model;
 
-import java.util.*;
+import java.io.Serializable;
 
-public class User {
+public class User implements Serializable {
+    private int id;
     private String firstName;
     private String lastName;
-    private int age;
-    private int id;
+    private String userName;
     private int password;
-    private String email;
-    private Date dob;
     private Gender gender;
-    private Position position;
+    private Role role;
+    private String dob;
     private BlType bloodType;
 
-    public User() {
-
-    }
-
-    public User(String firstName, String lastName, int age, int id, int password, String email, Date dob,
-            Gender gender, Position position, BlType bloodType) {
+    public User(String firstName, String lastName, int age, int id, int password, String userName, String dob,
+            Gender gender, Role role, BlType bloodType) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age;
         this.id = id;
         this.password = password;
-        this.email = email;
+        this.userName = userName;
         this.dob = dob;
         this.gender = gender;
-        this.position = position;
+        this.role = role;
         this.bloodType = bloodType;
     }
 
@@ -48,14 +42,6 @@ public class User {
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public int getId() {
         return id;
     }
@@ -72,19 +58,19 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
@@ -96,12 +82,12 @@ public class User {
         this.gender = gender;
     }
 
-    public Position getPosition() {
-        return position;
+    public Role getPosition() {
+        return role;
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+    public void setPosition(Role role) {
+        this.role = role;
     }
 
     public BlType getBloodType() {
@@ -114,8 +100,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", id=" + id + ", password="
-                + password + ", email=" + email + ", dob=" + dob + ", gender=" + gender + ", position=" + position
+        return "User [firstName=" + firstName + ", lastName=" + lastName + ", id=" + id + ", password="
+                + password + ", email=" + userName + ", dob=" + dob + ", gender=" + gender + ", position=" + role
                 + ", bloodType=" + bloodType + "]";
     }
 

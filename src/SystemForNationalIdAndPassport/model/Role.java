@@ -2,7 +2,7 @@ package SystemForNationalIdAndPassport.model;
 
 import java.io.Serializable;
 
-public enum RequestType implements Serializable {
-    RENEW,
-    CREATE
+public enum Role implements Serializable {
+    Employee,
+    Administrator
 }

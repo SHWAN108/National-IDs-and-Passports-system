@@ -1,7 +1,9 @@
 package SystemForNationalIdAndPassport.model;
 
-public enum Position {
-    Citizens,
+import java.io.Serializable;
+
+public enum Position implements Serializable {
+
     Employee,
     Administrator
 }

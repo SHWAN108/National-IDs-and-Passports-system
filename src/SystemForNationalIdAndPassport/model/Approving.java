@@ -1,6 +1,9 @@
 package SystemForNationalIdAndPassport.model;
 
-public enum Approving {
+import java.io.Serializable;
+
+public enum Approving implements Serializable {
     Accept,
-    Reject
+    Reject,
+    Waiting
 }

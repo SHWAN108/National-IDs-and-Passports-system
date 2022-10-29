@@ -5,7 +5,7 @@ import java.util.*;
 import SystemForNationalIdAndPassport.model.*;
 
 public class RequestController {
-    private ArrayList<Request> requests;
+    private ArrayList<> requests;
 
     public void makeNationalId() {
 

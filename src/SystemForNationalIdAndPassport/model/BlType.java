@@ -1,12 +1,14 @@
 package SystemForNationalIdAndPassport.model;
 
-public enum BlType {
+import java.io.Serializable;
+
+public enum BlType implements Serializable {
     Op,
-    Om,
+    On,
     Ap,
-    Am,
+    An,
     Bp,
-    Bm,
+    Bn,
     ABp,
-    ABm
+    ABn
 }
