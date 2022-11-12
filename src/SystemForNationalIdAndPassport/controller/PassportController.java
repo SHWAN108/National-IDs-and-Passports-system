@@ -1,61 +1,101 @@
-package SystemForNationalIdAndPassport.controller;
+package controller;
 
-import SystemForNationalIdAndPassport.model.BlType;
-import SystemForNationalIdAndPassport.model.Gender;
-import SystemForNationalIdAndPassport.model.NationalID;
-import SystemForNationalIdAndPassport.model.Passport;
+import model.*;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class PassportController {
-    public static ArrayList<Passport> approvedPassport = new ArrayList<>();
-    public static ArrayList<Passport> nonApprovedPassport = new ArrayList<>();
+
 
     public boolean create(String firstName, String lastName, int id, Date dob,
             Gender gender, BlType bloodType, Date expDate) {
-        Passport shwan = new Passport(firstName, lastName, id, dob, gender, bloodType, expDate);
-        approvedPassport.add(shwan);
-        return false;
+        var isPassportExistInApproved = Data.approvedPassport
+                .stream().anyMatch(passport -> passport.getId()==id);
+        var isPassportExistInNonApproved = Data.nonApprovedPassport
+                .stream().anyMatch(passport -> passport.getPassport().getId()==id);
+        if (isPassportExistInApproved || isPassportExistInNonApproved){
+            System.out.println("This Passport id exist");
+            return false;
+        }
+        Passport newPassport= new Passport(firstName, lastName, id, dob, gender, bloodType, expDate);
+        Data.nonApprovedPassport.add(new PassportApprovingStatus(newPassport,RequestType.CREATE,Approving.Waiting));
+        return Data.saveNonApprovedPassport();
     }
 
     public boolean renew() {
+        //after
         return false;
     }
 
-    public ArrayList<Passport> showAllPassport() {
-        approvedPassport.stream().forEach(System.out::println);
-        return approvedPassport;
+    public boolean acceptPassport(int id){
+        var isPassportExistInNonApproved = Data.nonApprovedPassport
+                .stream()
+                .filter(passportApprovingStatus -> passportApprovingStatus.getPassport().getId()==id)
+                .findFirst();
+        if (isPassportExistInNonApproved.isEmpty()){
+            System.out.println("This passport id not exist");
+            return false;
+        }else{
+            var indexOfPassport = Data.nonApprovedPassport.indexOf(isPassportExistInNonApproved.get());
+            Data.approvedPassport.add(Data.nonApprovedPassport.get(indexOfPassport).getPassport());
+            Data.nonApprovedPassport.remove(indexOfPassport);
+            return Data.saveApprovedPassport() && Data.saveNonApprovedPassport();
+        }
+    }
+
+    public boolean rejectPassport(int id){
+        var isPassportExistInNonApproved = Data.nonApprovedPassport
+                .stream()
+                .filter(passportApprovingStatus -> passportApprovingStatus.getPassport().getId()==id)
+                .findFirst();
+        if (isPassportExistInNonApproved.isEmpty()){
+            System.out.println("This passport id not exist");
+            return false;
+        }else{
+            var index = Data.nonApprovedPassport.indexOf(isPassportExistInNonApproved.get());
+            var newPassportStatus = new PassportApprovingStatus(Data.nonApprovedPassport.get(index).getPassport(),
+                    Data.nonApprovedPassport.get(index).getRequestType(),
+                    Approving.Reject);
+            Data.nonApprovedPassport.set(index,newPassportStatus);
+            return Data.saveNonApprovedPassport();
+        }
+    }
+
+    public List<String> showAllPassport() {
+        return Data.approvedPassport.stream().map(Passport::toString).collect(Collectors.toList());
 
     }
 
-    public NationalID getPassportByPassportID(int nationalId) {
-        return null;
+    public Passport getPassportByPassportID(int id) {
+        var isPassportExistInApproved = Data.approvedPassport
+                .stream().filter(passport -> passport.getId()==id).findFirst();
+        if (isPassportExistInApproved.isEmpty()){
+            //check for null when this function is called
+            return null;
+        }{
+            return isPassportExistInApproved.get();
+        }
     }
 
-    public ArrayList<Passport> showAllPendingPassport() {
-        approvedPassport.stream().forEach(System.out::println);
-        return nonApprovedPassport;
-
-    }
-
-    public ArrayList<Passport> showAllRejectedPassport() {
-        nonApprovedPassport.stream().forEach(System.out::println);
-        return nonApprovedPassport;
-
-    }
-
-    public ArrayList<Passport> showAllApprovedPassport() {
-        approvedPassport.stream().forEach(System.out::println);
-        return approvedPassport;
+    public List<String> showAllPendingPassport() {
+        return Data.nonApprovedPassport.stream()
+                .filter(passportApprovingStatus  -> passportApprovingStatus.getApprovingStatus() == Approving.Waiting)
+                .map(PassportApprovingStatus::toString).collect(Collectors.toList());
 
     }
 
-    public boolean leadAllDataToList() {
-        return false;
+    public List<String> showAllRejectedPassport() {
+        return Data.nonApprovedPassport.stream()
+                .filter(passportApprovingStatus  -> passportApprovingStatus.getApprovingStatus() == Approving.Reject)
+                .map(PassportApprovingStatus::toString).collect(Collectors.toList());
+
     }
 
-    public boolean saveListToFile() {
-        return false;
+    public List<String> showAllApprovedPassport() {
+        return Data.approvedPassport.stream()
+                .map(Passport::toString).collect(Collectors.toList());
+
     }
 }
