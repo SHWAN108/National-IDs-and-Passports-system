@@ -1,7 +1,7 @@
 # System for citizens' National IDs and Passports
 
 ## Description about the project
-National IDs and Passports System It is a system for the citizens, which uses this system to facilitate the work of the citizen related to national id and passport. This System has two users (Citizens, Government), both of them have its functionality. Government there is employee or administration, administration can access the system and see the things that the employ can’t and they can check on every applicant that has applied to the system, while the employee can just fill the information of the applicants into the system. The user can check their information in the system.
+National IDs and Passports System It is a system for the citizens, which uses this system to facilitate the work of the citizen related to national id and passport. This System has two users (Employee, Administrator), both of them have its functionality. Administration can access the system and see the things that the employ can’t and they can check on every applicant that has applied to the system, while the employee can just fill the information of the applicants into the system.
  
  ## Goals
   1. streamline transaction 
@@ -18,7 +18,7 @@ The content of the project will be the same in the below Diagram:
   
   ##  Functional-Requirements
 
-We have two types of users (Citizens and Goverment), each of them has a different point of view with different functionalities. Therefore, we must first login.
+We have two types of users (Employee, Administrator), each of them has a different point of view with different functionalities. Therefore, we must first login.
 
   **1-Login**
    - Enter User ID
@@ -42,21 +42,15 @@ We have two types of users (Citizens and Goverment), each of them has a differen
    - Send citizens requests to administration
    - Send the requests back to the citizens by Accepting/Rejecting it
 
-
-  **4- Citizens**
-   - Checking thier profile info    
-   - Sending request to the goverment
-     - Renew the passport
-     - Change name in National ID
  
  ## Non-Functional Requirements:
 - Performance: the software system’s performance should return results fast and should be scalable for the citizens, so it will adjustable to many conditions.
 - Security: the system should be secured very well against attack.
-- Usability: the system should be easy to use for our citizens even for non-technical users.
+- Usability: the system should be easy to use for our employees and administrator.
 - Portability: the system should be launched within different environments, the system should run in the same way in different windows.
  
 ## Accessibility(ally)
-The system is accessible to the administrant and employee, the citizens can only require changes to their applications 
+The system is accessible to the administrant and employee.
  - Administrant 
  - Employee
 
